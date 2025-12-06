@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record model="res.groups" id="group_user_vendedor">
+            <field name="name">Vendedor POS</field>
+        </record>
+        <record model="res.groups" id="group_user_cajero">
+            <field name="name">Cajero POS</field>
+        </record>
+        <record model="res.groups" id="group_user_supervisor">
+            <field name="name">Supervisor POS</field>
+        </record>
+        <record model="res.groups" id="group_user_admin">
+            <field name="name">Admin POS</field>
+        </record>
+    </data>
+</odoo>
