@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
-    <t t-inherit="point_of_sale.ReceiptHeader" t-inherit-mode="extension">
+    <t t-name="jfmt-pos-rol.ReceiptHeader" t-inherit="point_of_sale.ReceiptHeader" t-inherit-mode="extension">
         <xpath expr="//div[hasclass('pos-receipt-contact')]/div[@t-if='props.data.trackingNumber and !props.data.bigTrackingNumber']" position="replace">
             <span class="fw-bolder text-nowrap mw-100 fs-5">Ticket <t t-esc="props.data.trackingNumber"/></span>
         </xpath>
+        <xpath expr="//div[hasclass('pos-receipt-contact')]/div[@t-if='props.data.company.name']" position="replace">
+            <span/>
+        </xpath>
     </t>
-    <t t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension">
+    <t t-name="jfmt-pos-rol.OrderReceipt" t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension">
         <xpath expr="//div[hasclass('pos-receipt')]" position="attributes">
             <attribute name="style">font-size: 75% !important;</attribute>
         </xpath>
-    </t>
-    <t t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension">
         <xpath expr="//div[hasclass('pos-receipt')]/div[hasclass('pos-receipt-order-data')]/p" position="replace">
             <div>
                 <img t-att-src="'/report/barcode/Code128/'+props.data.name" style="width:200px;height:50px" alt="Barcode"/>

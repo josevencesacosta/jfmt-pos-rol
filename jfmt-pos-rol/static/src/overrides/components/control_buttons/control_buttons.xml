@@ -9,7 +9,6 @@
         </xpath>
         <xpath expr="//t[@t-if='props.showRemainingButtons']/div/button[@t-on-click='() => this.pos.onDeleteOrder(this.pos.get_order())']" position="attributes">
             <attribute name="t-if">
-                this.pos.get_cashier()._is_cajero ||
                 this.pos.get_cashier()._is_supervisor ||
                 this.pos.get_cashier()._is_admin
             </attribute>
